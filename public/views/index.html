@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rss reader</title>
+  </head>
+  <body>
+    <div>
+      <h1>rss reader</h1>
+    </div>
+    <div class = "content">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type = "text/javascript">
+    $(document).ready(function(){
+      $.get("/guardian", function(res){
+        console.log(res.data);
+        res.data.map(function(item){
+          $(".content")
+            .append($("<div/>")
+            .append($("<a/>", {href: item.link[0], text: item.title[0], target: "_blank"})));
+        });
+
+
+      });
+    });
+
+    </script>
+  </body>
+</html>
