@@ -2,13 +2,56 @@
 <html>
   <head>
     <title>rss reader</title>
+    <style>
+    .content{
+      display: table;
+      width: 100%;
+    }
+    .content .guardian{
+      display: table-cell;
+      width: 25%;
+    }
+    .content .vsunworld{
+      display: table-cell;
+      width: 25%;
+    }
+
+    .content .nytimesworld{
+      display: table-cell;
+      width: 25%;
+    }
+
+    .content .wapoworld{
+      display: table-cell;
+      width: 25%;
+    }
+    </style>
   </head>
   <body>
     <div>
       <h1>rss reader</h1>
     </div>
+    <div class = "nav">
+      <ul>
+        <li>Guardian</li>
+        <li>Vancouver Sun</li>
+        <li>NY TIMES</li>
+        <li>Washington Post</li>
+      </ul>
+    </div>
     <div class = "content">
+      <div class = "guardian">
 
+      </div>
+      <div class = "vsunworld">
+
+      </div>
+      <div class = "nytimesworld">
+
+      </div>
+      <div class = "wapoworld">
+
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script type = "text/javascript">
@@ -16,12 +59,42 @@
       $.get("/guardian", function(res){
         console.log(res.data);
         res.data.map(function(item){
-          $(".content")
+          $(".content .guardian")
             .append($("<div/>")
-            .append($("<a/>", {href: item.link[0], text: item.title[0], target: "_blank"})));
+            .append($("<a/>", {href: item.link[0], text: item.title[0], target: "_blank"}))
+            .append($("<br/>"))
+            .append($("<div/>", {text: item.pubDate})));
         });
+      });
 
+      $.get("/vsunworld", function(res){
+        res.data.map(function(item){
+          $(".content .vsunworld")
+            .append($("<div/>")
+            .append($("<a/>", {href: item.link[0], text: item.title[0], target: "_blank"}))
+            .append($("<br/>"))
+            .append($("<div/>", {text: item.pubDate})));
+        });
+      });
 
+      $.get("/nytimesworld", function(res){
+        res.data.map(function(item){
+          $(".content .nytimesworld")
+            .append($("<div/>")
+            .append($("<a/>", {href: item.link[0], text: item.title[0], target: "_blank"}))
+            .append($("<br/>"))
+            .append($("<div/>", {text: item.pubDate})));
+        });
+      });
+
+      $.get("/wapoworld", function(res){
+        res.data.map(function(item){
+          $(".content .wapoworld")
+            .append($("<div/>")
+            .append($("<a/>", {href: item.link[0], text: item.title[0], target: "_blank"}))
+            .append($("<br/>"))
+            .append($("<div/>", {text: item.pubDate})));
+        });
       });
     });
 

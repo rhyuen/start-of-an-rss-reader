@@ -10,10 +10,7 @@ router.get("/", (req, res) => {
 
 router.get("/guardian", (req, res) => {
   request.get("https://www.theguardian.com/world/rss", (err, reqres, body) => {
-    //console.log(body);
     parseString(body, (err, result) => {
-      //var processed = JSON.parse(JSON.stringify(result));
-      //console.log(processed.rss.channel[0].item);
       var items = result.rss.channel[0].item;
       var processed = items.map((currItem) => {
         return {
@@ -22,13 +19,72 @@ router.get("/guardian", (req, res) => {
           description: currItem.description,
           pubDate: currItem.pubDate
         }
-        // console.log(currItem.title);
-        // console.log(currItem.link);
-        // console.log(currItem.description);
-        // console.log(currItem.pubDate);
       });
       res.json({description: "/guardian Success", data: processed});
     });
+  });
+});
+
+router.get("/vsunworld", (req, res) => {
+  request.get("http://rss.canada.com/get/?F7432", (err, reqres, body) => {
+    parseString(body, (err, result) => {
+      var items = result.rss.channel[0].item;
+      var processed = items.map((currItem) => {
+        return {
+          title: currItem.title,
+          link: currItem.link,
+          description: currItem.description,
+          pubDate: currItem.pubDate
+        }
+      });
+      res.json({description: "GET /vsunworld Success", data: processed});
+    });
+
+  });
+});
+
+
+router.get("/nytimesworld", (req, res) => {
+  request.get("http://rss.nytimes.com/services/xml/rss/nyt/World.xml", (err, reqres, body) => {
+    if(err)
+      console.error(err);
+
+    parseString(body, (err, result) => {
+      var items = result.rss.channel[0].item;
+      var processed = items.map((currItem) => {
+        return {
+          title: currItem.title,
+          link: currItem.link,
+          description: currItem.description,
+          pubDate: currItem.pubDate
+          //category field as well for tags.
+        }
+      });
+      res.json({description: "GET /nytimesworld Success", data: processed});
+    });
+
+  });
+});
+
+router.get("/wapoworld", (req, res) => {
+  request.get("http://feeds.washingtonpost.com/rss/world", (err, reqres, body) => {
+    if(err)
+      console.error(err);
+
+    parseString(body, (err, result) => {
+      var items = result.rss.channel[0].item;
+      var processed = items.map((currItem) => {
+        return {
+          title: currItem.title,
+          link: currItem.link,
+          description: currItem.description,
+          pubDate: currItem.pubDate
+          //category field as well for tags.
+        }
+      });
+      res.json({description: "GET /nytimesworld Success", data: processed});
+    });
+
   });
 });
 
