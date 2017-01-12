@@ -82,9 +82,72 @@ router.get("/wapoworld", (req, res) => {
           //category field as well for tags.
         }
       });
-      res.json({description: "GET /nytimesworld Success", data: processed});
+      res.json({description: "GET /wapoworld Success", data: processed});
     });
 
+  });
+});
+
+router.get("/bbcworld", (req, res) => {
+  request.get("http://feeds.bbci.co.uk/news/world/rss.xml?edition=uk#", (err, reqres, body) => {
+    if(err)
+      console.error(err);
+
+    parseString(body, (err, result) => {
+      var items = result.rss.channel[0].item;
+      var processed = items.map((currItem) => {
+        return {
+          title: currItem.title,
+          link: currItem.link,
+          description: currItem.description,
+          pubDate: currItem.pubDate
+          //category field as well for tags.
+        }
+      });
+      res.json({description: "GET /bbcworld Success", data: processed});
+    });
+  });
+});
+
+router.get("/globemailworld", (req, res) => {
+  request.get("http://www.theglobeandmail.com/news/world/?service=rss", (err, reqres, body) => {
+    if(err)
+      console.error(err);
+
+    parseString(body, (err, result) => {
+      var items = result.rss.channel[0].item;
+      var processed = items.map((currItem) => {
+        return {
+          title: currItem.title,
+          link: currItem.link,
+          description: currItem.description,
+          pubDate: currItem.pubDate
+          //category field as well for tags.
+        }
+      });
+      res.json({description: "GET /globemailworld Success", data: processed});
+    });
+  });
+});
+
+router.get("/cbcworld", (req, res) => {
+  request.get("http://www.cbc.ca/cmlink/rss-world", (err, reqres, body) => {
+    if(err)
+      console.error(err);
+
+    parseString(body, (err, result) => {
+      var items = result.rss.channel[0].item;
+      var processed = items.map((currItem) => {
+        return {
+          title: currItem.title,
+          link: currItem.link,
+          description: currItem.description,
+          pubDate: currItem.pubDate
+          //category field as well for tags.
+        }
+      });
+      res.json({description: "GET /cbcworld Success", data: processed});
+    });
   });
 });
 
