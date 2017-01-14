@@ -13,9 +13,9 @@ class Source extends Component {
   }
 
   showResponse(response){
-    console.log("FIRST %s", response);
+    console.log("FIRST %s", response.data);
     this.setState({
-      content: response.results
+      content: response.data
     });
     console.log("SECOND %s", this.state.content);
   }
@@ -27,6 +27,9 @@ class Source extends Component {
       url: URL,
       success: function(response){
         this.showResponse(response);
+
+        console.log("AJAX CALL");
+        console.dir(response);
       }.bind(this)
     });
   }
@@ -36,11 +39,19 @@ class Source extends Component {
   }
 
   render(){
+    var sources = this.state.content.map((currItem) => {
+      return (
+        <SourceItem
+          title = {currItem.title}
+          link = {currItem.link}
+          pubDate = {currItem.pubDate}/>
+      )
+    })
+
     return (
-      <SourceItem
-        title = {this.state.content.title}
-        link = {this.state.content.link}
-        pubDate = {this.state.content.pubDate}/>        
+      <div>
+        {sources}
+      </div>
     );
   }
 }

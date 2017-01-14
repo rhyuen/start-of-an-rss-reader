@@ -9,15 +9,38 @@ class App extends Component {
     };
   }
 
+
+
   render(){
+    const urlList = {
+      guardian: "/guardian",
+      vsun: "/vsunworld",
+      nyt: "/nytimesworld",
+      wapo: "/wapoworld",
+      bbc: "/bbcworld",
+      globemail: "/globemailworld",
+      cbc: "/cbcworld"
+    };
+
+
+    const masterSource = Object.keys(urlList).map((key) => {
+      return (
+        <Source url = {urlList[key]}/>
+      );
+    });
+
     return (
-      <div>
-        <Source url = "/guardian"/>
-        <Source url = "/wapoworld"/>
-        <Source url = "/vsunworld"/>
-        <Source url = "/nytimesworld"/>
-      </div>
+      <div>{masterSource}</div>
     );
+
+    // return (
+    //   <div>
+    //     <Source url = "/guardian"/>
+    //     <Source url = "/wapoworld"/>
+    //     <Source url = "/vsunworld"/>
+    //     <Source url = "/nytimesworld"/>
+    //   </div>
+    // );
   }
 }
 

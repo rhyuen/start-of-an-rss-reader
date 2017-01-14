@@ -25,5 +25,22 @@
     "react-dom": "^15.4.2",
     "webpack": "^1.14.0",
     "webpack-cleanup-plugin": "^0.4.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "env": {
+      "development": {
+        "presets": []
+      },
+      "production": {
+        "presets": []
+      },
+      "test": {
+        "presets": []
+      }
+    }
   }
 }
