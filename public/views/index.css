@@ -1,47 +1,51 @@
-
-
-.nav li{
-  list-style-type: none;
-  display: inline-block;
+body{
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(220, 205, 237);
 }
 
-a{
-  text-decoration: none;
+#container{
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
   font-family: "Segoe UI";
 }
 
-.content{
-  display: table;
+.root{
+  width: 100%;
+  height: 100%;
+}
+
+.header{
+  width: 100%;
+  height: 5%;
+  background-color: rgb(224, 173, 215);
+}
+
+.banner{
+  width: 100%;
+  height: 25%;
+  background-color: rgb(162, 202, 228);
+}
+
+
+
+.primary-content-container{
   width: 100%;
 }
-.content .guardian{
-  display: table-cell;
-  width: 20%;
-}
-.content .vsunworld{
-  display: table-cell;
-  width: 20%;
+
+.source-list{
+  display: inline-block;
+  width: 14%;
+  vertical-align: top;
 }
 
-.content .nytimesworld{
-  display: table-cell;
-  width: 20%;
+.source-container{
 }
 
-.content .wapoworld{
-  display: table-cell;
-  width: 20%;
-}
-
-.content .bbcworld{
-  display: table-cell;
-  width: 20%;
-}
-
-.content .globemailworld{
-
-}
-
-.content .cbcworld{
-
+.source-item{
+  list-style-type: none;
 }

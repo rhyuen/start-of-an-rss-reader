@@ -1,9 +1,11 @@
+"use strict";
+
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-let router = require("./routes.js");
-let app = express();
+const router = require("./routes.js");
+const app = express();
 
 
 

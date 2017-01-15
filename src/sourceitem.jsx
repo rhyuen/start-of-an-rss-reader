@@ -8,9 +8,14 @@ class SourceItem extends Component {
   render(){
     return (
       <ul>
-        <li>{this.props.title}</li>
-        <li>{this.props.link}</li>
-        <li>{this.props.pubDate}</li>
+        <li className = "source-item">
+          <a href = {this.props.link} target = "_blank">
+            {this.props.title}
+          </a>
+        </li>
+        <li className = "source-item">
+          {this.props.pubDate}
+        </li>
       </ul>
     );
   }

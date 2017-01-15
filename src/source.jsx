@@ -13,11 +13,9 @@ class Source extends Component {
   }
 
   showResponse(response){
-    console.log("FIRST %s", response.data);
     this.setState({
       content: response.data
     });
-    console.log("SECOND %s", this.state.content);
   }
 
   getData(URL){
@@ -27,8 +25,6 @@ class Source extends Component {
       url: URL,
       success: function(response){
         this.showResponse(response);
-
-        console.log("AJAX CALL");
         console.dir(response);
       }.bind(this)
     });
@@ -45,11 +41,11 @@ class Source extends Component {
           title = {currItem.title}
           link = {currItem.link}
           pubDate = {currItem.pubDate}/>
-      )
-    })
+      );
+    });
 
     return (
-      <div>
+      <div className = "source-list">
         {sources}
       </div>
     );

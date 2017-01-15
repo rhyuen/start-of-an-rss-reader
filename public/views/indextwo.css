@@ -1,0 +1,47 @@
+
+
+.nav li{
+  list-style-type: none;
+  display: inline-block;
+}
+
+a{
+  text-decoration: none;
+  font-family: "Segoe UI";
+}
+
+.content{
+  display: table;
+  width: 100%;
+}
+.content .guardian{
+  display: table-cell;
+  width: 20%;
+}
+.content .vsunworld{
+  display: table-cell;
+  width: 20%;
+}
+
+.content .nytimesworld{
+  display: table-cell;
+  width: 20%;
+}
+
+.content .wapoworld{
+  display: table-cell;
+  width: 20%;
+}
+
+.content .bbcworld{
+  display: table-cell;
+  width: 20%;
+}
+
+.content .globemailworld{
+
+}
+
+.content .cbcworld{
+
+}

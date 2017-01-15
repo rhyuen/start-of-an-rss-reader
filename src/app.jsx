@@ -30,7 +30,17 @@ class App extends Component {
     });
 
     return (
-      <div>{masterSource}</div>
+      <div className = "root">
+        <div className = "header">
+          Header
+        </div>
+        <div className = "banner">
+          RSS Reader
+        </div>
+        <div className = "primary-content-container">
+          {masterSource}
+        </div>
+      </div>
     );
 
     // return (
