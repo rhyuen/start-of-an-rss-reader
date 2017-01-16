@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import LSHeader from "./lsheader.jsx";
+import RSHeader from "./rsheader.jsx";
+
 
 class Header extends Component{
   constructor(props){
@@ -11,7 +14,8 @@ class Header extends Component{
   render(){
     return (
       <div className = "header">
-        Content from the Header Component
+        <LSHeader/>
+        <RSHeader/>
       </div>
     );
   }
