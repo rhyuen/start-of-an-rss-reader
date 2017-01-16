@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import Source from "./source.jsx";
+import Header from "./header.jsx";
+import Banner from "./banner.jsx";
 
 class App extends Component {
   constructor(props){
@@ -13,44 +15,34 @@ class App extends Component {
 
   render(){
     const urlList = {
-      guardian: "/guardian",
-      vsun: "/vsunworld",
-      nyt: "/nytimesworld",
-      wapo: "/wapoworld",
-      bbc: "/bbcworld",
-      globemail: "/globemailworld",
-      cbc: "/cbcworld"
+      "The Guardian": "/guardian",
+      "Vancouver Sun": "/vsunworld",
+      "NY Times": "/nytimesworld",
+      "Washington Post": "/wapoworld",
+      "BBC": "/bbcworld",
+      "Globe and Mail": "/globemailworld",
+      "CBC": "/cbcworld"
     };
 
 
-    const masterSource = Object.keys(urlList).map((key) => {
+    const masterSource = Object.keys(urlList).map((currSourceKey, index) => {
       return (
-        <Source url = {urlList[key]}/>
+        <Source
+          key = {index}
+          sourceTitle = {currSourceKey.toString()}
+          url = {urlList[currSourceKey]}/>
       );
     });
 
     return (
       <div className = "root">
-        <div className = "header">
-          Header
-        </div>
-        <div className = "banner">
-          RSS Reader
-        </div>
+        <Header/>
+        <Banner/>
         <div className = "primary-content-container">
           {masterSource}
         </div>
       </div>
     );
-
-    // return (
-    //   <div>
-    //     <Source url = "/guardian"/>
-    //     <Source url = "/wapoworld"/>
-    //     <Source url = "/vsunworld"/>
-    //     <Source url = "/nytimesworld"/>
-    //   </div>
-    // );
   }
 }
 

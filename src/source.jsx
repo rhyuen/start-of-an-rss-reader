@@ -35,9 +35,10 @@ class Source extends Component {
   }
 
   render(){
-    var sources = this.state.content.map((currItem) => {
+    var sources = this.state.content.map((currItem, index) => {
       return (
         <SourceItem
+          key = {index}
           title = {currItem.title}
           link = {currItem.link}
           pubDate = {currItem.pubDate}/>
@@ -46,6 +47,9 @@ class Source extends Component {
 
     return (
       <div className = "source-list">
+        <h4>{this.props.sourceTitle}
+          <span> ( {sources.length} )</span>
+        </h4>
         {sources}
       </div>
     );
