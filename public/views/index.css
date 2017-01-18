@@ -50,4 +50,5 @@ body{
 
 .source-item{
   list-style-type: none;
+  overflow-x: hidden;
 }

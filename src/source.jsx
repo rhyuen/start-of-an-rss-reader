@@ -36,11 +36,15 @@ class Source extends Component {
 
   render(){
     var sources = this.state.content.map((currItem, index) => {
+      var regex = /(<([^>]+)>)/ig;
+      var newdesc = currItem.description.toString().replace(regex, "");
+
       return (
         <SourceItem
           key = {index}
           title = {currItem.title}
           link = {currItem.link}
+          description = {newdesc}
           pubDate = {currItem.pubDate}/>
       );
     });

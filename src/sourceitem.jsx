@@ -14,6 +14,9 @@ class SourceItem extends Component {
           </a>
         </li>
         <li className = "source-item">
+          {this.props.description}
+        </li>
+        <li className = "source-item">
           {this.props.pubDate}
         </li>
       </ul>
