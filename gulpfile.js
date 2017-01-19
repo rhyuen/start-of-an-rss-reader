@@ -1,5 +1,6 @@
 var gulp = require("gulp");
 var babel = require("gulp-babel");
+var browserSync = require("browser-sync").Create();
 var nodemon = require("gulp-nodemon");
 var webpack = require("webpack-stream");
 var webpackConfig = require("./webpack.config.js");

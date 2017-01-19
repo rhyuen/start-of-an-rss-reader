@@ -45,10 +45,74 @@ body{
   vertical-align: top;
 }
 
-.source-container{
+.support-text{
+  font-size: 12px;
 }
 
-.source-item{
-  list-style-type: none;
-  overflow-x: hidden;
+.si{
+  width: 100%;
+  height: 35vh;
+  overflow: hidden;
+}
+
+.si__source{
+  height: 5vh;
+  display: table;
+}
+.si__source__icon{
+  display: table-cell;
+  background-color: rgb(218, 127, 122);
+  height: 100%;
+  width: 5%;
+
+
+}
+.si__source__details{
+  display: table-cell;
+  width: 95%;
+}
+
+.si__header{
+  width: 100%;
+  background-color: rgb(188, 138, 212);
+}
+
+.si__header__category{
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.si__header__title{
+  font-size: 18px;
+  font-weight: bold;
+}
+.si__header__title a{
+  text-decoration: none;
+  color: black;
+}
+
+.si__header__author{
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+
+
+.si__social{
+  width: 100%;
+  background-color: rgb(127, 185, 207);
+}
+.si__social__likes{
+  display: inline-block;
+  padding-right: 1vh;
+}
+.si__social__comments{
+  display: inline-block;
+  padding-right: 1vh;
+}
+
+
+.si__description{
+  font-size: 16px;
+  font-family: "Times New Roman";
 }

@@ -50,6 +50,7 @@ rssKeys.forEach((key) => {
         var items = result.rss.channel[0].item;
         var processed = items.map((currItem) => {
           console.dir(currItem["dc:creator"]);
+          console.dir(currItem["author"]);
 
           return {
             title: currItem.title,
@@ -63,5 +64,9 @@ rssKeys.forEach((key) => {
     });
   });
 });
+
+function getAuthor(newsSource, sourceItem){
+  return "String";
+}
 
 module.exports = router;

@@ -1,25 +1,27 @@
 import React, {Component} from "react";
+import SourceItemSource from "./sourceitem-source.jsx";
+import SourceItemHeader  from "./sourceitem-header.jsx";
+import SourceItemDescription from "./sourceitem-description.jsx";
+import SourceItemSocial from "./sourceitem-social.jsx";
+
 
 class SourceItem extends Component {
   constructor(props){
     super(props);
+    this.state = {
+
+    };
   }
 
   render(){
+
     return (
-      <ul>
-        <li className = "source-item">
-          <a href = {this.props.link} target = "_blank">
-            {this.props.title}
-          </a>
-        </li>
-        <li className = "source-item">
-          {this.props.description}
-        </li>
-        <li className = "source-item">
-          {this.props.pubDate}
-        </li>
-      </ul>
+      <div className = "si">
+        <SourceItemSource date = {this.props.pubDate} link = {this.props.link}/>
+        <SourceItemHeader title = {this.props.title} link = {this.props.link}/>
+        <SourceItemDescription description = {this.props.description}/>
+        <SourceItemSocial />
+      </div>
     );
   }
 }
