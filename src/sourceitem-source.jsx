@@ -11,8 +11,8 @@ class SourceItemSource extends Component {
       <div className = "si__source support-text">
         <div className ="si__source__icon">ICON</div>
         <div className ="si__source__details">
-          <div><a href = "/">FROM WORLD NEWS</a></div>
-          <div>News Source<span>{this.props.date}</span></div>
+          <div>FROM <a href = "/">WORLD NEWS</a></div>
+          <div>{this.props.newsSource} <span>{this.props.date}</span></div>
         </div>
       </div>
     );

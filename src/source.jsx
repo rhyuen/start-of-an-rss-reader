@@ -42,10 +42,13 @@ class Source extends Component {
       return (
         <SourceItem
           key = {index}
+          newsSource = {currItem.newsSource}
           title = {currItem.title}
           link = {currItem.link}
           description = {newdesc}
-          pubDate = {currItem.pubDate}/>
+          pubDate = {currItem.pubDate}
+          author = {currItem.author}
+          category = {currItem.category}/>
       );
     });
 

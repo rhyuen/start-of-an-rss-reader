@@ -49,15 +49,18 @@ rssKeys.forEach((key) => {
       parseString(body, (err, result) => {
         var items = result.rss.channel[0].item;
         var processed = items.map((currItem) => {
-          console.dir(currItem["dc:creator"]);
-          console.dir(currItem["author"]);
+          // console.dir(currItem["dc:creator"]);
+          // console.dir(currItem["author"]);
 
           return {
+            newsSource: key,
             title: currItem.title,
             link: currItem.link,
             description: currItem.description,
-            pubDate: currItem.pubDate
-          }
+            pubDate: currItem.pubDate,
+            author: getAuthor(currItem, key),
+            category: getCategory(currItem, key)
+          };
         });
         res.json({description:  `${key} Success`, data: processed});
       });
@@ -65,8 +68,30 @@ rssKeys.forEach((key) => {
   });
 });
 
-function getAuthor(newsSource, sourceItem){
-  return "String";
+function getCategory(sourceItem, key){
+  if(key === "NY Times" || key === "The Guardian"){
+    var tags = [];
+    sourceItem["category"].map((currItem) => {
+      tags.push(currItem["_"]);
+    });
+    return tags.join(",");
+  }
+
+  if(sourceItem["category"]){
+    return sourceItem["category"];
+  }
+
+  return "WORLD NEWS";
+}
+
+function getAuthor(sourceItem, newsSource){
+  //Guardian
+  if(sourceItem["dc:creator"])
+    return sourceItem["dc:creator"];
+  //CBC
+  if(sourceItem["author"])
+    return sourceItem["author"];
+  return newsSource;
 }
 
 module.exports = router;

@@ -17,8 +17,13 @@ class SourceItem extends Component {
 
     return (
       <div className = "si">
-        <SourceItemSource date = {this.props.pubDate} link = {this.props.link}/>
-        <SourceItemHeader title = {this.props.title} link = {this.props.link}/>
+        <SourceItemSource date = {this.props.pubDate}
+                          link = {this.props.link}
+                          newsSource = {this.props.newsSource}/>
+        <SourceItemHeader title = {this.props.title}
+                          link = {this.props.link}
+                          author = {this.props.author}
+                          category = {this.props.category}/>
         <SourceItemDescription description = {this.props.description}/>
         <SourceItemSocial />
       </div>

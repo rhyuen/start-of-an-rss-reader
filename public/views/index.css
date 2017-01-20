@@ -23,6 +23,7 @@ body{
   width: 100%;
   height: 5vh;
   background-color: rgb(224, 173, 215);
+  z-index: 4;
   position: fixed;
 }
 
@@ -32,6 +33,15 @@ body{
   height: 50vh;
   color: black;
   background-color: rgb(197, 233, 166);
+}
+
+.banner__leftside{
+  float: left;
+  width: auto;
+}
+.banner__rightside{
+  float: right;
+  width: auto;
 }
 
 .primary-content-container{
@@ -53,6 +63,9 @@ body{
   width: 100%;
   height: 35vh;
   overflow: hidden;
+  position: relative;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .si__source{
@@ -63,13 +76,18 @@ body{
   display: table-cell;
   background-color: rgb(218, 127, 122);
   height: 100%;
-  width: 5%;
+  width: 25%;
+  padding-bottom: 5vh;
 
 
 }
 .si__source__details{
   display: table-cell;
-  width: 95%;
+  width: 75%;
+}
+.si__source__details a{
+  text-decoration: none;
+  color: blue;
 }
 
 .si__header{
@@ -81,6 +99,12 @@ body{
   padding-top: 1vh;
   padding-bottom: 1vh;
 }
+.si__header__category a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: blue;
+}
+
 
 .si__header__title{
   font-size: 18px;
@@ -101,6 +125,8 @@ body{
 .si__social{
   width: 100%;
   background-color: rgb(127, 185, 207);
+  position: absolute;
+  bottom: 0;
 }
 .si__social__likes{
   display: inline-block;

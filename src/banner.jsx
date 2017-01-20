@@ -11,7 +11,7 @@ class Banner extends Component{
   render(){
     return (
       <div className = "banner">
-        Banner Text.
+        Yet another RSS Reader.
       </div>
     );
   }

@@ -10,12 +10,12 @@ class SourceItemHeader extends Component {
     return (
       <div className = "si__header support-text">
         <div className = "si__header__category">
-          <a href = "/">Category</a>
+          <a href = "/">{this.props.category}</a>
         </div>
         <div className = "si__header__title">
           <a href = {this.props.link}>{this.props.title}</a>
         </div>
-        <div className = "si__header__author">Author Name</div>
+        <div className = "si__header__author">{this.props.author}</div>
       </div>
     );
   }
