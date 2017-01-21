@@ -69,7 +69,8 @@ rssKeys.forEach((key) => {
 });
 
 function getCategory(sourceItem, key){
-  if(key === "NY Times" || key === "The Guardian"){
+
+  if((key === "NY Times" || key === "The Guardian") && sourceItem["category"]) {
     var tags = [];
     sourceItem["category"].map((currItem) => {
       tags.push(currItem["_"]);
@@ -80,6 +81,7 @@ function getCategory(sourceItem, key){
   if(sourceItem["category"]){
     return sourceItem["category"];
   }
+
 
   return "WORLD NEWS";
 }

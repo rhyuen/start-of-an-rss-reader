@@ -10,8 +10,10 @@ class LSHeader extends Component{
   render(){
     return (
       <div className = "banner__leftside">
-        <a href = "/">YARR</a>
-        <input type = "button" name = "header-download" value = "Download App"/>
+        <a className = "header__button header__button--root" href = "/">YARR</a>
+        <a className = "header__button" href = "/">Download App</a>
+        <a className = "header__button" href = "/">Popular</a>
+        <a className = "header__button" href = "/">Aggregate</a>
       </div>
     );
   }

@@ -25,6 +25,26 @@ body{
   background-color: rgb(224, 173, 215);
   z-index: 4;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__button{
+  background-color: rgb(135, 49, 232);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1vh 2vh;
+  border-radius: 0.5vh;
+  margin-left: 0.5vh;
+  margin-right: 0.5vh;
+}
+.header__button--root{
+  background-color: inherit;
+  color: black;
 }
 
 .banner{
@@ -32,7 +52,12 @@ body{
   width: 100%;
   height: 50vh;
   color: black;
-  background-color: rgb(197, 233, 166);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .banner__leftside{
@@ -40,8 +65,9 @@ body{
   width: auto;
 }
 .banner__rightside{
-  float: right;
   width: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .primary-content-container{
@@ -141,4 +167,5 @@ body{
 .si__description{
   font-size: 16px;
   font-family: "Times New Roman";
+  line-height: 150%;
 }

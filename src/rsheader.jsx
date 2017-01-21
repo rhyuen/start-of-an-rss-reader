@@ -10,9 +10,16 @@ class RSHeader extends Component{
   render(){
     return (
       <div className = "banner__rightside">
-        <input type = "text" name = "header-search" value = "Search"/>
-        <input type = "button" name = "header-login" value = "Login"/>
-        <input type = "button" name = "header-signup" value = "Signup"/>
+        <input className = "header_search"
+              type = "text"
+              name = "header-search"
+              placeholder = "Search"/>
+        <a href = "/"
+          className = "header__button"
+          name = "header-login" >Login</a>
+        <a href = "/"
+          className = "header__button"
+          name = "header-signup" >Signup</a>
       </div>
     );
   }
