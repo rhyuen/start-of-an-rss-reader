@@ -54,9 +54,6 @@ class Source extends Component {
 
     return (
       <div className = "source-list">
-        <h4>{this.props.sourceTitle}
-          <span> ( {sources.length} )</span>
-        </h4>
         {sources}
       </div>
     );
