@@ -43,7 +43,8 @@ class App extends Component {
       "Washington Post": "/wapoworld",
       "BBC": "/bbcworld",
       "Globe and Mail": "/globemailworld",
-      "CBC": "/cbcworld"
+      "CBC": "/cbcworld",
+      "The Intercept": "/theintercept"
     };
 
     for(var key in urlList){

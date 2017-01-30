@@ -34,11 +34,21 @@ const rssList = {
   "CBC": {
     relPath: "/cbcworld",
     srcUrl: "http://www.cbc.ca/cmlink/rss-world"
+  },
+  "The Intercept": {
+    relPath: "/theintercept",
+    srcUrl: "https://theintercept.com/feed/?lang=en"
   }
 };
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/views/index.html"));
+});
+router.get("/popular", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/views/popular.html"));
+});
+router.get("/bysource", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/views/bysource.html"));
 });
 
 
@@ -49,8 +59,6 @@ rssKeys.forEach((key) => {
       parseString(body, (err, result) => {
         var items = result.rss.channel[0].item;
         var processed = items.map((currItem) => {
-          // console.dir(currItem["dc:creator"]);
-          // console.dir(currItem["author"]);
 
           return {
             newsSource: key,
@@ -79,6 +87,8 @@ function getCategory(sourceItem, key){
   }
 
   if(sourceItem["category"]){
+    if(key === "The Intercept")
+      return sourceItem["category"].join(", ");
     return sourceItem["category"];
   }
 

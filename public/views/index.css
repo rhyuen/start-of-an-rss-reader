@@ -94,15 +94,20 @@ body{
 
 .si{
   /*width: 100%;*/
-  height: 35vh;
+  height: 50vh;
   overflow: hidden;
   position: relative;
-  padding-top: 5vh;
+  margin-top: 5vh;
   padding-bottom: 5vh;
 
 
   width: 25%;
   display: inline-block;
+  border: 1px solid rgba(135, 49, 232, 0.1);
+  box-sizing: border-box;
+  background-color: rgb(224, 188, 235);
+
+
 }
 
 .si__source{
@@ -176,7 +181,12 @@ body{
   color: blue;
 }
 
-
+.si__header__colorblock{
+  margin-top: 1vh;
+  background-color: rgb(135, 49, 232);
+  height: 10vh;
+  width: 100%;
+}
 
 .si__header{
   width: 100%;
@@ -223,6 +233,13 @@ body{
 .si__social__comments{
   display: inline-block;
   padding-right: 1vh;
+}
+.si__social__more{
+  display: inline-block;
+}
+.si__social__more a{
+  text-decoration: none;
+  color: rgb(35, 100, 300);
 }
 
 

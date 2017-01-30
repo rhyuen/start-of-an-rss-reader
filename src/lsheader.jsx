@@ -11,9 +11,8 @@ class LSHeader extends Component{
     return (
       <div className = "banner__leftside">
         <a className = "header__button header__button--root" href = "/">YARR</a>
-        <a className = "header__button" href = "/">Download App</a>
         <a className = "header__button" href = "/">Popular</a>
-        <a className = "header__button" href = "/">Aggregate</a>
+        <a className = "header__button" href = "/">By Source</a>
       </div>
     );
   }

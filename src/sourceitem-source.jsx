@@ -20,8 +20,13 @@ class SourceItemSource extends Component {
         </div>
         <div className ="si__source__details">
           <div className = "si__source__details__content">
-            <div className = "si__source__details__content__category">FROM <a href = "/">WORLD NEWS</a></div>
-            <div className = "si__source__details__content__datetime">{this.props.newsSource} <span>{this.props.date}</span></div>
+            <div className = "si__source__details__content__category">
+              FROM <a href = "/">WORLD NEWS</a>
+            </div>
+            <div className = "si__source__details__content__datetime">
+              <a href = "#" target = "_blank">{this.props.newsSource} </a>
+              <span>{this.props.date}</span>
+            </div>
           </div>
         </div>
       </div>

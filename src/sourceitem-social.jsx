@@ -16,6 +16,7 @@ class SourceItemSocial extends Component {
       <div className = "si__social support-text">
         <div className = "si__social__likes">{this.getRandomNumber()} Likes</div>
         <div className = "si__social__comments">Add Comment</div>
+        <div className = "si__social__more"><a href = "#">More</a></div>
       </div>
     );
   }
