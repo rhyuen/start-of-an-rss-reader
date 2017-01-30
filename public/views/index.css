@@ -71,15 +71,19 @@ body{
 }
 
 .primary-content-container{
-  width: 100%;
+  /*width: 100%;*/
   height: 100%;
+
+  padding-left: 20%;
+  padding-right: 20%;
+  width: 60%;
 }
 
-.source-list{
+/*.source-list{
   display: inline-block;
   width: 14%;
   vertical-align: top;
-}
+}*/
 
 .support-text{
   width: 100%;
@@ -89,12 +93,16 @@ body{
 
 
 .si{
-  width: 100%;
+  /*width: 100%;*/
   height: 35vh;
   overflow: hidden;
   position: relative;
   padding-top: 5vh;
   padding-bottom: 5vh;
+
+
+  width: 25%;
+  display: inline-block;
 }
 
 .si__source{
