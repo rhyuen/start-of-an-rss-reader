@@ -5,10 +5,15 @@ const BUILD_DIR = path.resolve(__dirname, "public/views");
 const SRC_DIR = path.resolve(__dirname, "src");
 
 module.exports = {
-  entry: path.join(SRC_DIR, "index.jsx"),
+  entry: {
+    "indexEntry": path.join(SRC_DIR, "index.jsx"),
+    "profileEntry": path.join(SRC_DIR, "profile_index.jsx"),
+    "popularEntry": path.join(SRC_DIR, "popular_index.jsx"),
+    "bySourceEntry": path.join(SRC_DIR, "bysource_index.jsx")
+  },
   output: {
     path: BUILD_DIR,
-    filename: "bundle.js"
+    filename: "[name].js"
   },
   watch: true,
   module: {
@@ -20,5 +25,9 @@ module.exports = {
         loader: "babel"
       }
     ]
+  },
+  devServer: {
+    inline: true,
+    hot: true
   }
 };
