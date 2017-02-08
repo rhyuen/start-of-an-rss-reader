@@ -38,6 +38,18 @@ const rssList = {
   "The Intercept": {
     relPath: "/theintercept",
     srcUrl: "https://theintercept.com/feed/?lang=en"
+  },
+  "The Economist": {
+    relPath : "/theeconomist",
+    srcUrl: "http://www.economist.com/sections/international/rss.xml"
+  },
+  // "The Atlantic": {
+  //   relPath : "/theatlantic",
+  //   srcUrl: "https://www.theatlantic.com/feed/channel/international/"
+  // },
+  "New Yorker": {
+    relPath : "/newyorker",
+    srcUrl: "http://www.newyorker.com/feed/news"
   }
 };
 
@@ -57,6 +69,10 @@ rssKeys.forEach((key) => {
   router.get(rssList[key].relPath, (req, res) => {
     request.get(rssList[key].srcUrl, (err, reqres, body) => {
       parseString(body, (err, result) => {
+        if(err){
+          console.log("ERROR %s", err);
+        }
+        console.log(result.rss.channel);
         var items = result.rss.channel[0].item;
         var processed = items.map((currItem) => {
 

@@ -14,11 +14,8 @@ class App extends Component {
   }
 
   showResponse(response){
-    // var updatedContent = this.state.content.slice(0);
-    // updatedContent.push(response.data);
-
     this.setState({
-      content: this.state.content.concat(response.data)
+      content: this.state.content.concat(response)
     });
   }
 
@@ -28,12 +25,16 @@ class App extends Component {
       dataType: "json",
       url: URL,
       success: function(response){
-        // this.state.content.push(response);
-        this.showResponse(response);
-        console.dir(response);
+        var processed = response.data.map((item) => {
+          if(item.newsSource === "The Economist")
+            delete item["category"];
+          return item;
+        });
+        this.showResponse(processed);
       }.bind(this)
     });
   }
+
 
   componentDidMount(){
     const urlList = {
@@ -44,7 +45,9 @@ class App extends Component {
       "BBC": "/bbcworld",
       "Globe and Mail": "/globemailworld",
       "CBC": "/cbcworld",
-      "The Intercept": "/theintercept"
+      "New Yorker": "/newyorker",
+      "The Intercept": "/theintercept",
+      "The Economist": "/theeconomist"
     };
 
     for(var key in urlList){
@@ -57,9 +60,9 @@ class App extends Component {
     var sources = this.state.content.map((currItem, index) => {
       var regex = /(<([^>]+)>)/ig;
       var newdesc = currItem.description.toString().replace(regex, "");
-
       return (
         <SourceItem
+          key = {index}
           newsSource = {currItem.newsSource}
           title = {currItem.title}
           link = {currItem.link}
@@ -80,37 +83,6 @@ class App extends Component {
       </div>
     );
   }
-  // render(){
-  //   const urlList = {
-  //     "The Guardian": "/guardian",
-  //     "Vancouver Sun": "/vsunworld",
-  //     "NY Times": "/nytimesworld",
-  //     "Washington Post": "/wapoworld",
-  //     "BBC": "/bbcworld",
-  //     "Globe and Mail": "/globemailworld",
-  //     "CBC": "/cbcworld"
-  //   };
-  //
-  //
-  //   const masterSource = Object.keys(urlList).map((currSourceKey, index) => {
-  //     return (
-  //       <Source
-  //         key = {index}
-  //         sourceTitle = {currSourceKey.toString()}
-  //         url = {urlList[currSourceKey]}/>
-  //     );
-  //   });
-  //
-  //   return (
-  //     <div className = "root">
-  //       <Header/>
-  //       <Banner/>
-  //       <div className = "primary-content-container">
-  //         {masterSource}
-  //       </div>
-  //     </div>
-  //   );
-  // }
 }
 
 export default App;

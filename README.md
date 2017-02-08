@@ -2,6 +2,8 @@
 
 > News aggregator for world news from a number of news sources that has the UI of Flipboard.  An attempt at React.
 
+>
+
 ### LOCAL INSTALL
 
 > yarn install

@@ -33,4 +33,11 @@ class SourceItemHeader extends Component {
   }
 }
 
+SourceItemHeader.propTypes = {
+  title: React.PropTypes.string,
+  link: React.PropTypes.string,
+  author: React.PropTypes.string,
+  category: React.PropTypes.string
+};
+
 export default SourceItemHeader;

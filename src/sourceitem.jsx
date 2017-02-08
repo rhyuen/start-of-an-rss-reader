@@ -16,7 +16,7 @@ class SourceItem extends Component {
   render(){
 
     return (
-      <div className = "si">
+      <div className = "si" key = {this.props.key}>
         <SourceItemSource date = {this.props.pubDate}
                           link = {this.props.link}
                           newsSource = {this.props.newsSource}/>
@@ -30,5 +30,17 @@ class SourceItem extends Component {
     );
   }
 }
+
+SourceItem.propTypes = {
+  key: React.PropTypes.number.isRequired,
+  newsSource: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string.isRequired,
+  description: React.PropTypes.string.isRequired,
+  pubDate: React.PropTypes.string.isRequired,
+  author: React.PropTypes.string.isRequired,
+  category: React.PropTypes.string
+};
+
+
 
 export default SourceItem;

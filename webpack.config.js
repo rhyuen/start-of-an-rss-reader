@@ -12,7 +12,7 @@ module.exports = {
     "bySourceEntry": path.join(SRC_DIR, "bysource_index.jsx")
   },
   output: {
-    path: BUILD_DIR,
+    path: path.join(BUILD_DIR, "dist"),
     filename: "[name].js"
   },
   watch: true,
