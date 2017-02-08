@@ -34,4 +34,10 @@ class SourceItemSource extends Component {
   }
 }
 
+SourceItemSource.propTypes = {
+  date: React.PropTypes.string.isRequired,
+  link: React.PropTypes.string.isRequired,
+  newsSource: React.PropTypes.string.isRequired
+};
+
 export default SourceItemSource;

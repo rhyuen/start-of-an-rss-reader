@@ -19,6 +19,10 @@ class App extends Component {
     });
   }
 
+  cleanResponseData(currResponseItem){
+    return currResponseItem;
+  }
+
   getData(URL){
     $.ajax({
       type: "GET",

@@ -15,4 +15,9 @@ class SourceItemDescription extends Component {
   }
 }
 
+
+SourceItemDescription.propTypes = {
+  description: React.PropTypes.string.isRequired
+};
+
 export default SourceItemDescription;

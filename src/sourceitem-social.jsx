@@ -22,4 +22,8 @@ class SourceItemSocial extends Component {
   }
 }
 
+SourceItemSocial.propTypes = {
+  
+};
+
 export default SourceItemSocial;
