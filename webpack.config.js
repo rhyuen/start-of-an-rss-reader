@@ -15,7 +15,7 @@ module.exports = {
     path: path.join(BUILD_DIR, "dist"),
     filename: "[name].js"
   },
-  watch: true,
+  watch: false,
   module: {
     loaders: [
       {

@@ -10,6 +10,7 @@ class App extends Component {
       content: []
     };
     this.showResponse = this.showResponse.bind(this);
+    this.cleanResponseData = this.cleanResponseData.bind(this);
     this.getData = this.getData.bind(this);
   }
 
@@ -20,7 +21,24 @@ class App extends Component {
   }
 
   cleanResponseData(currResponseItem){
-    return currResponseItem;
+    //Economist Object.
+    var cleanedCategory = {
+      author: currResponseItem["author"][0],
+      description: currResponseItem["description"][0],
+      link: currResponseItem["link"][0],
+      newsSource: currResponseItem["newsSource"],
+      pubDate: currResponseItem["pubDate"][0],
+      title: currResponseItem["title"][0],
+      category: []
+    };
+
+    if(currResponseItem["newsSource"] === "The Economist" && currResponseItem["category"]){
+      currResponseItem["category"].map((itr_cat) => {
+        cleanedCategory["category"].push(itr_cat["_"] + ", ");
+      });
+    }
+
+    return cleanedCategory;
   }
 
   getData(URL){
@@ -29,11 +47,13 @@ class App extends Component {
       dataType: "json",
       url: URL,
       success: function(response){
+
         var processed = response.data.map((item) => {
-          if(item.newsSource === "The Economist")
-            delete item["category"];
-          return item;
+          if(item.newsSource === "The Economist"){
+            return this.cleanResponseData(item);
+          }return item;
         });
+
         this.showResponse(processed);
       }.bind(this)
     });

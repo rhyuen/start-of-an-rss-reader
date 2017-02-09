@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "nodemon index.js",    
+    "dev": "webpack --watch --colors --progress"
   },
   "dependencies": {
     "body-parser": "^1.15.2",

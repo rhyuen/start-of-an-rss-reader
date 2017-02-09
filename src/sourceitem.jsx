@@ -14,7 +14,6 @@ class SourceItem extends Component {
   }
 
   render(){
-
     return (
       <div className = "si" key = {this.props.key}>
         <SourceItemSource date = {this.props.pubDate}
@@ -36,11 +35,9 @@ SourceItem.propTypes = {
   newsSource: React.PropTypes.string.isRequired,
   title: React.PropTypes.string.isRequired,
   description: React.PropTypes.string.isRequired,
-  pubDate: React.PropTypes.string.isRequired,
+  pubDate: React.PropTypes.string,
   author: React.PropTypes.string.isRequired,
   category: React.PropTypes.string
 };
-
-
 
 export default SourceItem;
