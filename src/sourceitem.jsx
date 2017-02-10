@@ -22,9 +22,10 @@ class SourceItem extends Component {
         <SourceItemHeader title = {this.props.title}
                           link = {this.props.link}
                           author = {this.props.author}
-                          category = {this.props.category}/>
+                          category = {this.props.category}
+                          newsSource = {this.props.newsSource}/>
         <SourceItemDescription description = {this.props.description}/>
-        <SourceItemSocial />
+        <SourceItemSocial link = {this.props.link}/>
       </div>
     );
   }

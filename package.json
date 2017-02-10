@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "start": "nodemon index.js",    
-    "dev": "webpack --watch --colors --progress"
+    "start": "nodemon index.js",
+    "dev": "webpack --watch --colors --progress",
+    "deploy": "now --npm"
   },
   "dependencies": {
     "body-parser": "^1.15.2",

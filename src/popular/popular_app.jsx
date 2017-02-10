@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Header from "../header.jsx";
 
 class PopularApp extends Component{
   constructor(props){
@@ -10,9 +11,12 @@ class PopularApp extends Component{
 
   render(){
     return (
-      <div>
-        A Popuplar app
-      </div>
+        <div className = "root">
+          <Header/>
+          <div className = "primary-content-container">
+            Popular
+          </div>
+        </div>
     );
   }
 }

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Header from "../header.jsx";
 
 class BySourceApp extends Component{
   constructor(props){
@@ -10,8 +11,11 @@ class BySourceApp extends Component{
 
   render(){
     return (
-      <div>
-        A BySource app
+      <div className = "root">
+        <Header/>
+        <div className = "primary-content-container">
+          BySource
+        </div>
       </div>
     );
   }

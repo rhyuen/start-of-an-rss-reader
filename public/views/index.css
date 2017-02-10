@@ -106,9 +106,9 @@ body{
   border: 1px solid rgba(135, 49, 232, 0.1);
   box-sizing: border-box;
   background-color: rgb(224, 188, 235);
-
-
 }
+
+
 
 .si__source{
   height: 4vh;
@@ -247,4 +247,35 @@ body{
   font-size: 16px;
   font-family: "Times New Roman";
   line-height: 150%;
+}
+
+.si__source--theguardian{
+  background-color: rgb(22, 71, 156);
+}
+.si__source--nytimes{
+  background-color: black;
+}
+.si__source--newyorker{
+  background-color: black;
+}
+.si__source--economist{
+  background-color: rgb(179, 11, 46);
+}
+.si__source--washingtonpost{
+  background-color: #343434;
+}
+.si__source--globeandmail{
+  background-color: rgb(194, 150, 64);
+}
+.si__source--cbc{
+  background-color: rgb(179, 33, 33);
+}
+.si__source--theintercept{
+  background-color: black;
+}
+.si__source--vancouversun{
+  background-color: rgb(35, 148, 141);
+}
+.si__source--bbc{
+  background-color: black;
 }

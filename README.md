@@ -2,7 +2,6 @@
 
 > News aggregator for world news from a number of news sources that has the UI of Flipboard.  An attempt at React.
 
->
 
 ### LOCAL INSTALL
 
@@ -12,7 +11,9 @@
 
 > yarn start
 
+### WEB DEPLOYMENT
 
+> If you have a [NOW]("https://zeit.co/") account and have the CLI tool installed, you can deploy with "yarn deploy".
 
 ### DOCKER
 

@@ -16,14 +16,16 @@ class SourceItemSocial extends Component {
       <div className = "si__social support-text">
         <div className = "si__social__likes">{this.getRandomNumber()} Likes</div>
         <div className = "si__social__comments">Add Comment</div>
-        <div className = "si__social__more"><a href = "#">More</a></div>
+        <div className = "si__social__more">
+          <a href = {this.props.link} target = "_blank">More</a>
+        </div>
       </div>
     );
   }
 }
 
 SourceItemSocial.propTypes = {
-  
+  link: React.PropTypes.string.isRequired
 };
 
 export default SourceItemSocial;

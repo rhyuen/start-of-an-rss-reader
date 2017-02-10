@@ -108,7 +108,6 @@ function getCategory(sourceItem, key){
     return sourceItem["category"];
   }
 
-
   return "WORLD NEWS";
 }
 
