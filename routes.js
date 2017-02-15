@@ -67,15 +67,30 @@ router.get("/bysource", (req, res) => {
 var rssKeys = Object.keys(rssList);
 rssKeys.forEach((key) => {
   router.get(rssList[key].relPath, (req, res) => {
-    request.get(rssList[key].srcUrl, (err, reqres, body) => {
+    request.get(rssList[key].srcUrl, (err, reqResponse, body) => {
+      if(err){
+        console.error("[%s] GENERIC ERROR: %s for %s", new Date().toLocaleString(), err, key);
+        return res.json({
+          description: `${key} Failure`,
+          status: `${key}: Something is wrong on their end.`
+        });
+      }
+      if(reqResponse.statusCode === 500){
+        console.error("[%s] 500 ERROR for %s", new Date().toLocaleString(), key);
+        return res.json({
+          description: `${key} Failure`,
+          status: `${key}: 500.  Something is wrong on their end.`
+        });
+      }
+
       parseString(body, (err, result) => {
         if(err){
           console.log("ERROR %s", err);
         }
-        console.log(result.rss.channel);
-        var items = result.rss.channel[0].item;
-        var processed = items.map((currItem) => {
 
+        var items = result.rss.channel[0].item;
+
+        var processed = items.map((currItem) => {
           return {
             newsSource: key,
             title: currItem.title,

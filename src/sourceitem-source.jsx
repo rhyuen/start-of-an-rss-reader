@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import abbr from "./news-config.js";
 
 
 class SourceItemSource extends Component {
@@ -6,50 +7,7 @@ class SourceItemSource extends Component {
     super(props);
   }
 
-  render(){
-    const abbr = {
-      "Vancouver Sun": {
-        letter: "VS",
-        style: "si__source--vancouversun"
-      },
-      "NY Times": {
-        letter: "NYT",
-        style: "si__source--nytimes"
-      },
-      "The Guardian": {
-        letter: "G",
-        style: "si__source--theguardian"
-      },
-      "Washington Post": {
-        letter: "WP",
-        style: "si__source--washingtonpost"
-      },
-      "BBC": {
-        letter: "B",
-        style: "si__source--bbc"
-      },
-      "Globe and Mail": {
-        letter: "G",
-        style: "si__source--globeandmail"
-      },
-      "CBC": {
-        letter: "C",
-        style: "si__source--cbc"
-      },
-      "The Intercept": {
-        letter: "I",
-        style: "si__source--theintercept"
-      },
-      "The Economist": {
-        letter: "E",
-        style: "si__source--economist"
-      },
-      "New Yorker": {
-        letter: "N",
-        style: "si__source--newyorker"
-      }
-    };
-
+  render(){    
     var circleClassNames = "si__source__icon__circle " + abbr[this.props.newsSource].style;
 
     return (

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import abbr from "./news-config.js";
 
 
 class SourceItemHeader extends Component {
@@ -18,39 +19,6 @@ class SourceItemHeader extends Component {
   }
 
   render(){
-    const abbr = {
-      "Vancouver Sun": {
-        style: "si__source--vancouversun"
-      },
-      "NY Times": {
-        style: "si__source--nytimes"
-      },
-      "The Guardian": {
-        style: "si__source--theguardian"
-      },
-      "Washington Post": {
-        style: "si__source--washingtonpost"
-      },
-      "BBC": {
-        style: "si__source--bbc"
-      },
-      "Globe and Mail": {
-        style: "si__source--globeandmail"
-      },
-      "CBC": {
-        style: "si__source--cbc"
-      },
-      "The Intercept": {
-        style: "si__source--theintercept"
-      },
-      "The Economist": {
-        style: "si__source--economist"
-      },
-      "New Yorker": {
-        style: "si__source--newyorker"
-      }
-    };
-
     var colorblockClassNames = "si__header__colorblock " + abbr[this.props.newsSource].style;
 
     return (

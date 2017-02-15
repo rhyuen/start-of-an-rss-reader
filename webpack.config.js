@@ -19,11 +19,11 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx?/,
+        test: /\.(js|jsx)?/,
         exclude: /node_modules/,
         include: SRC_DIR,
         loader: "babel"
-      }
+      }      
     ]
   },
   devServer: {
