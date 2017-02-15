@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "test": "mocha",
     "build": "webpack",
     "start": "nodemon index.js",
     "dev": "webpack --watch --colors --progress",

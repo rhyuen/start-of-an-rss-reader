@@ -62,6 +62,12 @@ router.get("/popular", (req, res) => {
 router.get("/bysource", (req, res) => {
   res.sendFile(path.join(__dirname, "public/views/bysource.html"));
 });
+router.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/views/login.html"));
+});
+router.get("/signup", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/views/signup.html"));
+});
 
 
 var rssKeys = Object.keys(rssList);
@@ -105,6 +111,10 @@ rssKeys.forEach((key) => {
       });
     });
   });
+});
+
+router.get("*", (req, res) => {
+  res.redirect("/");
 });
 
 function getCategory(sourceItem, key){

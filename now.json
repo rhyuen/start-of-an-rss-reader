@@ -1,0 +1,9 @@
+{
+  "name": "yarr-reader",
+  "alias": [
+    "yarr-reader"
+  ],
+  "engines": {
+    "node": "7.0.0"
+  }
+}

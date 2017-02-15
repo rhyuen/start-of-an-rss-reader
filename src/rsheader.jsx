@@ -14,10 +14,10 @@ class RSHeader extends Component{
               type = "text"
               name = "header-search"
               placeholder = "Search"/>
-        <a href = "/"
+        <a href = "/login"
           className = "header__button"
           name = "header-login" >Login</a>
-        <a href = "/"
+        <a href = "/signup"
           className = "header__button"
           name = "header-signup" >Signup</a>
       </div>
