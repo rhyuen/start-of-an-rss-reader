@@ -2,6 +2,7 @@
 
 > News aggregator for world news from a number of news sources that has the UI of Flipboard.  An attempt at React.
 
+> Here's a [link]("https://yarr-reader.now.sh") to the latest version.
 
 ### LOCAL INSTALL
 

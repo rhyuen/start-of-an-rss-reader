@@ -14,7 +14,16 @@ class BySourceApp extends Component{
       <div className = "root">
         <Header/>
         <div className = "primary-content-container">
-          BySource
+          <div>
+            <h4>Left Panel</h4>
+            <div>
+              <div>Article Count</div>
+              <div>Tag Cloud</div>
+            </div>
+          </div>
+          <div>
+            Right Panel, Containing Articles.
+          </div>
         </div>
       </div>
     );
