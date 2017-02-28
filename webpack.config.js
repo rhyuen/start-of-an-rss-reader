@@ -9,7 +9,9 @@ module.exports = {
     "indexEntry": path.join(SRC_DIR, "index.jsx"),
     "profileEntry": path.join(SRC_DIR, "profile/profile_index.jsx"),
     "popularEntry": path.join(SRC_DIR, "popular/popular_index.jsx"),
-    "bySourceEntry": path.join(SRC_DIR, "bysource/bysource_index.jsx")
+    "bySourceEntry": path.join(SRC_DIR, "bysource/bysource_index.jsx"),
+    "loginEntry": path.join(SRC_DIR, "login/login_index.jsx"),
+    "signupEntry": path.join(SRC_DIR, "signup/signup_index.jsx")
   },
   output: {
     path: path.join(BUILD_DIR, "dist"),
@@ -23,7 +25,7 @@ module.exports = {
         exclude: /node_modules/,
         include: SRC_DIR,
         loader: "babel"
-      }      
+      }
     ]
   },
   devServer: {

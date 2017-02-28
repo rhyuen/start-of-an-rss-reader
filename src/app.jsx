@@ -2,16 +2,22 @@ import React, {Component} from "react";
 import Header from "./header.jsx";
 import Banner from "./banner.jsx";
 import SourceItem from "./sourceitem.jsx";
+import Reader from "./reader.jsx";
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      content: []
+      content: [],
+      readerUrl: "",
+      readerContent: "",
+      showReader: false
     };
     this.showResponse = this.showResponse.bind(this);
     this.cleanResponseData = this.cleanResponseData.bind(this);
     this.getData = this.getData.bind(this);
+    this.getDataForReader = this.getDataForReader.bind(this);
+    this.onClickCloseReader = this.onClickCloseReader.bind(this);
   }
 
   showResponse(response){
@@ -79,6 +85,34 @@ class App extends Component {
     }
   }
 
+  getDataForReader(event){
+    event.preventDefault();
+
+    console.log(event.nativeEvent.target.children[0].innerText);
+    var tester = event.nativeEvent.target.children[0].innerText;
+
+    console.log(tester);
+
+    $.ajax({
+      type: "POST",
+      url: "/reader",
+      data: {url: tester},
+      success: function(response){
+        console.log(response.data);
+        this.setState({
+          readerContent: response.data,
+          showReader: true
+        });
+      }.bind(this)
+    });
+  }
+
+  onClickCloseReader(event){
+    event.preventDefault();
+    this.setState({
+      showReader: false
+    });
+  }
 
   render(){
     var sources = this.state.content.map((currItem, index) => {
@@ -93,12 +127,17 @@ class App extends Component {
           description = {newdesc}
           pubDate = {currItem.pubDate}
           author = {currItem.author}
-          category = {currItem.category}/>
+          category = {currItem.category}
+          handleReader = {this.getDataForReader}/>
       );
     });
 
     return (
       <div className = "root">
+        {this.state.showReader ?
+          <Reader currReaderContent = {this.state.readerContent}
+                  closeReader = {this.onClickCloseReader}/> : null
+        }
         <Header/>
         <Banner/>
         <div className = "primary-content-container">

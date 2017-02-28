@@ -25,7 +25,7 @@ class SourceItem extends Component {
                           category = {this.props.category}
                           newsSource = {this.props.newsSource}/>
         <SourceItemDescription description = {this.props.description}/>
-        <SourceItemSocial link = {this.props.link}/>
+        <SourceItemSocial link = {this.props.link} updateReader = {this.props.handleReader}/>
       </div>
     );
   }
@@ -38,7 +38,8 @@ SourceItem.propTypes = {
   description: React.PropTypes.string.isRequired,
   pubDate: React.PropTypes.string,
   author: React.PropTypes.string.isRequired,
-  category: React.PropTypes.string
+  category: React.PropTypes.string,
+  handleReader: React.PropTypes.func.isRequired
 };
 
 export default SourceItem;

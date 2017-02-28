@@ -4,6 +4,9 @@ import React, {Component} from "react";
 class SourceItemSocial extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      showReaderHere: true
+    };
     this.getRandomNumber = this.getRandomNumber.bind(this);
   }
 
@@ -15,9 +18,16 @@ class SourceItemSocial extends Component {
     return (
       <div className = "si__social support-text">
         <div className = "si__social__likes">{this.getRandomNumber()} Likes</div>
-        <div className = "si__social__comments">Add Comment</div>
-        <div className = "si__social__more">
-          <a href = {this.props.link} target = "_blank">More</a>
+        <div className = "si__social__more-here">
+          <a onClick = {this.props.updateReader}>
+            <span className = "si__social__more-here--hidden">
+              {this.props.link}
+            </span>
+            More Here
+          </a>
+        </div>
+        <div className = "si__social__more-there">
+          <a href = {this.props.link} target = "_blank">More There</a>
         </div>
       </div>
     );
@@ -25,7 +35,8 @@ class SourceItemSocial extends Component {
 }
 
 SourceItemSocial.propTypes = {
-  link: React.PropTypes.string.isRequired
+  link: React.PropTypes.string.isRequired,
+  updateReader: React.PropTypes.func.isRequired
 };
 
 export default SourceItemSocial;

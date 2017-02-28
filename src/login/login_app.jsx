@@ -14,7 +14,12 @@ class LoginApp extends Component{
         <div className = "root">
           <Header/>
           <div className = "primary-content-container">
-            Popular
+            <div>
+              {/* <input type = "text" name = "username" placeholder = "Your Username"/>
+              <input type = "password" name = "password" placeholder = "Your Password"/>
+              <input type = "password" name = "confirm-password" placeholder = "Confirm your password."/>
+              <input type = "button" value = "Submit"/> */}
+            </div>
           </div>
         </div>
     );
